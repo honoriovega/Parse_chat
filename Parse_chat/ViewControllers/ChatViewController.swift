@@ -10,6 +10,8 @@ import UIKit
 import Parse
 
 class ChatViewController: UIViewController,UITableViewDataSource {
+    
+    var messages : [PFObject] = []
 
     @IBOutlet weak var chatMessageField: UITextField!
     
@@ -19,6 +21,8 @@ class ChatViewController: UIViewController,UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        fetchMessages()
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
 
         // Do any additional setup after loading the view.
     }
@@ -26,16 +30,15 @@ class ChatViewController: UIViewController,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatCell
-        
-//        cell.instagramPost = posts[indexPath.row]
-//        print(posts[indexPath.row])
+        cell.messageLabel.text = messages[indexPath.row]["text"] as! String
+
         
         return cell
     }
@@ -64,6 +67,34 @@ class ChatViewController: UIViewController,UITableViewDataSource {
     @IBAction func onLogout(_ sender: Any) {
         
         NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
+
+    }
+    
+    
+    func fetchMessages() {
+        let query = Message.query()
+        
+        query?.order(byDescending: "createdAt")
+        query?.includeKey("author")
+        query?.limit = 20
+        
+        // fetch data asynchronously
+        query?.findObjectsInBackground { (messages: [PFObject]?, error: Error?) -> Void in
+            if let messages = messages {
+                self.messages = messages
+                self.tableView.reloadData()
+                print(messages)
+                // do something with the data fetched
+            } else {
+                // handle error
+            }
+        }
+        
+    }
+    
+    @objc func onTimer() {
+        // Add code to be run periodically
+        fetchMessages()
 
     }
 }
