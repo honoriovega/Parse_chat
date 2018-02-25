@@ -66,7 +66,6 @@ class LoginViewController: UIViewController {
         let username = usernameTextField.text as? String
         let password = passwordTextField.text as? String
         newUser.username = username
-        newUser.email = ""
         newUser.password = password
         // call sign up function on the object
         newUser.signUpInBackground { (success: Bool, error: Error?) in
@@ -75,7 +74,7 @@ class LoginViewController: UIViewController {
             
             } else {
                 print("User Registered successfully")
-                // manually segue to logged in view
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
         }
     }

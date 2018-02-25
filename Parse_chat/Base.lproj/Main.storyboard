@@ -106,21 +106,33 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sM-av-p6u">
-                                                    <rect key="frame" x="8" y="8" width="359" height="56.5"/>
+                                                    <rect key="frame" x="8" y="30" width="359" height="38"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="359" id="e2a-f2-heh"/>
+                                                        <constraint firstAttribute="height" constant="38" id="ead-N1-goj"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rx-hX-XNF">
+                                                    <rect key="frame" x="8" y="8" width="44.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="6sM-av-p6u" secondAttribute="trailing" constant="8" id="5pe-aV-8au"/>
-                                                <constraint firstItem="6sM-av-p6u" firstAttribute="leading" secondItem="qTz-sZ-aGv" secondAttribute="leading" constant="8" id="MWv-7u-Vdb"/>
-                                                <constraint firstAttribute="bottom" secondItem="6sM-av-p6u" secondAttribute="bottom" constant="8" id="cPQ-5m-Lt6"/>
-                                                <constraint firstItem="6sM-av-p6u" firstAttribute="top" secondItem="qTz-sZ-aGv" secondAttribute="top" constant="8" id="mWo-pU-EHJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="6sM-av-p6u" secondAttribute="bottom" constant="4" id="6C4-rO-y8G"/>
+                                                <constraint firstItem="6rx-hX-XNF" firstAttribute="leading" secondItem="qTz-sZ-aGv" secondAttribute="leading" constant="8" id="NfL-ho-aLv"/>
+                                                <constraint firstItem="6sM-av-p6u" firstAttribute="top" secondItem="6rx-hX-XNF" secondAttribute="bottom" constant="4" id="lgx-hv-YXf"/>
+                                                <constraint firstItem="6sM-av-p6u" firstAttribute="leading" secondItem="qTz-sZ-aGv" secondAttribute="leading" constant="8" id="qqQ-T8-D4v"/>
+                                                <constraint firstItem="6rx-hX-XNF" firstAttribute="top" secondItem="qTz-sZ-aGv" secondAttribute="top" constant="8" id="xNM-W0-n2M"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="messageLabel" destination="6sM-av-p6u" id="0x8-ZT-azG"/>
+                                            <outlet property="usernameLabel" destination="6rx-hX-XNF" id="CF6-Yd-hDz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
