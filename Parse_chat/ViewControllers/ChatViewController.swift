@@ -23,7 +23,10 @@ class ChatViewController: UIViewController,UITableViewDataSource {
         tableView.dataSource = self
         fetchMessages()
         Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
-
+        // Auto size row height based on cell autolayout constraints
+        tableView.rowHeight = UITableViewAutomaticDimension
+        // Provide an estimated row height. Used for calculating scroll indicator
+        tableView.estimatedRowHeight = 50
         // Do any additional setup after loading the view.
     }
     
