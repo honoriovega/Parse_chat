@@ -30,14 +30,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z00-gT-RWa">
                                 <rect key="frame" x="103" y="176" width="173" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXZ-bG-6By">
                                 <rect key="frame" x="103" y="292" width="55" height="30"/>
@@ -72,7 +72,7 @@
         <!--Chat-->
         <scene sceneID="Ono-J1-OBI">
             <objects>
-                <viewController storyboardIdentifier="ChatViewController" id="uXk-b9-DJD" customClass="ChatViewController" customModule="Parse_chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uXk-b9-DJD" customClass="ChatViewController" customModule="Parse_chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q79-LY-lKj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,7 +172,7 @@
         <!--Navigation Controller-->
         <scene sceneID="MIv-fu-sas">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0d1-Ky-UjQ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ChatViewController" automaticallyAdjustsScrollViewInsets="NO" id="0d1-Ky-UjQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aJl-Vw-wlf">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
